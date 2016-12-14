@@ -7,7 +7,7 @@ namespace Pantheon\TerminusDrupalConsole\Commands;
 use \Pantheon\Terminus\Commands\Remote\SSHBaseCommand;
 
 /**
- * Say hello to the user
+ * Run a Drupal Console Command
  */
 class DrupalConsoleCommand extends SSHBaseCommand
 {
@@ -38,13 +38,13 @@ class DrupalConsoleCommand extends SSHBaseCommand
      * @aliases drupal
      *
      * @param string $site_env_id Name of the environment to run the drush command on.
-     * @param array $drupal_command Drush command to invoke on the environment
-     * @return string Output of the given drush command executed on the site environment
+     * @param array $drupal_command Drupal Console command to invoke on the environment
+     * @return string Output of the given Drupal Console command executed on the site environment
      *
      * @usage terminus drupal <site>.<env> -- <command>
      *    Runs the Drupal Console command <command> on the <env> environment of <site>
      */
-    public function drushCommand($site_env_id, array $drupal_command)
+    public function drupalCommand($site_env_id, array $drupal_command)
     {
         $this->prepareEnvironment($site_env_id);
 

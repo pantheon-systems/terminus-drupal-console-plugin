@@ -14,7 +14,7 @@ class DrupalConsoleCommand extends SSHBaseCommand
     /**
      * @inheritdoc
      */
-    protected $command = 'composer drupal';
+    protected $command = 'drupal';
 
     /**
      * @inheritdoc

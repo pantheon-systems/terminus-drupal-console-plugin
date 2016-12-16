@@ -21,7 +21,7 @@ In order for the Terminus Drupal Console plugin to work, you must add Drupal Con
 For help installing, see [Terminus's Wiki](https://github.com/pantheon-systems/terminus/wiki/Plugins)
 ```
 mkdir -p ~/.terminus/plugins
-composer create-project -d ~/.terminus/plugins pantheon-systems/terminus-drupal-console-plugin terminus-drupal-console-plugin dev-1.x
+composer create-project -d ~/.terminus/plugins pantheon-systems/terminus-drupal-console-plugin:~1
 ```
 ## Help
 Run `terminus help drupal` for help.

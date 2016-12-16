@@ -1,5 +1,5 @@
 {
-    "name": "pantheon/terminus-drupal-console-plugin",
+    "name": "pantheon-systems/terminus-drupal-console-plugin",
     "description": "Drupal Console - A Terminus plugin for running Drupal Console commands on a Pantheon site",
     "type": "terminus-plugin",
     "license": "MIT",

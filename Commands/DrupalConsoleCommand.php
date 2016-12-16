@@ -36,9 +36,6 @@ class DrupalConsoleCommand extends CommandWithSSH {
   public function __invoke($args, $assoc_args) {
     parent::__invoke($args, $assoc_args);
     $command = $this->ssh_command;
-    if ($this->log()->getOptions('logFormat') != 'normal') {
-        $command .= ' --pipe';
-    }
     $result = $this->sendCommandViaUnbufferedSsh($this->environment, $command);
     exit($result['exit_code']);
   }

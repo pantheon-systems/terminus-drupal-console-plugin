@@ -8,23 +8,17 @@ This project is based on the [Terminus Composer](https://github.com/rvtraveller/
 
 ## Configuration
 
-In order for the Terminus Drupal Console plugin to work, you must configure your Drupal site.
+In order for the Terminus Drupal Console plugin to work, you must add Drupal Console to your Drupal site.  Drupal Console is already included if you are using the [Example Drops-8 Composer repository](https://github.com/pantheon-systems/example-drops-8-composer) (recommended).
 
-* Add Drupal Console to your Drupal site via `composer require`
-* Add a Drupal Console configuration file to console/config.yml
-
-The config.yml file should contain (at a minimum):
-```
-application:
-    options:
-        root: web
-```
 ## Examples
 * `terminus drupal "list" --site=my-site --env=dev`
 * `terminus drupal "theme:debug" --site=my-site --env=dev`
 
 ## Installation
 For help installing, see [Terminus's Wiki](https://github.com/pantheon-systems/terminus/wiki/Plugins)
-
+```
+mkdir -p ~/terminus/plugins
+composer create-project pantheon-systems/terminus-drupal-console-plugin -d ~/terminus/plugins terminus-drupal-console-plugin dev-0.x
+```
 ## Help
 Run `terminus help drupal` for help.

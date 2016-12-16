@@ -13,7 +13,7 @@ class DrupalConsoleCommand extends CommandWithSSH {
   /**
    * {@inheritdoc}
    */
-  protected $client = 'drupal';
+  protected $client = 'Drupal Console';
 
   /**
    * {@inheritdoc}
@@ -34,25 +34,14 @@ class DrupalConsoleCommand extends CommandWithSSH {
    *
    */
   public function __invoke($args, $assoc_args) {
-    $sites = new Sites();
-    $site  = $sites->get($this->input()->siteName(['args' => $assoc_args,]));
-    $env_id = $this->input()->env(['args' => $assoc_args, 'site' => $site,]);
-    /** @var Environment $environment */
-    $environment = $site->environments->get($env_id);
-
-    $command = 'composer drupal ' . implode(' ', $args);
-    if ($result = $environment->sendCommandViaSsh($command)) {
-      $output = $result['output'];
-      if ($result['exit_code'] != 0) {
-        $output = $result['exit_code'] . ': ' . $output;
-        $this->log()->error($output);
-      } else {
-        $this->log()->info("\n" . $output);
-      }
-    } else {
-      $output = 'Unable to execute command.';
-      $this->log()->error($output);
+    parent::__invoke($args, $assoc_args);
+    $command = $this->ssh_command;
+    if ($this->log()->getOptions('logFormat') != 'normal') {
+        $command .= ' --pipe';
     }
+    $result = $this->environment->sendCommandViaSsh($command);
+    $this->output()->outputDump($result['output']);
+    exit($result['exit_code']);
   }
 }
 

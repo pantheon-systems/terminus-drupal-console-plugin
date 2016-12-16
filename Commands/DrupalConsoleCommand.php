@@ -39,9 +39,23 @@ class DrupalConsoleCommand extends CommandWithSSH {
     if ($this->log()->getOptions('logFormat') != 'normal') {
         $command .= ' --pipe';
     }
-    $result = $this->environment->sendCommandViaSsh($command);
-    $this->output()->outputDump($result['output']);
+    $result = $this->sendCommandViaUnbufferedSsh($this->environment, $command);
     exit($result['exit_code']);
   }
-}
 
+  /**
+   * Sends a command to an environment via SSH. Do not capture output.
+   */
+  public function sendCommandViaUnbufferedSsh($environment, $command)
+  {
+    $sftp = $environment->sftpConnectionInfo();
+    $ssh_command = vsprintf(
+        'ssh -T %s@%s -p %s -o "AddressFamily inet" %s',
+        [$sftp['username'], $sftp['host'], $sftp['port'], escapeshellarg($command),]
+    );
+
+    passthru($ssh_command, $exit_code);
+
+    return $exit_code;
+  }
+}

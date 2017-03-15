@@ -19,7 +19,7 @@ In order for the Terminus Drupal Console plugin to work, you must add Drupal Con
 * `terminus drupal my-site.dev -- theme:debug`
 
 ## Installation
-For help installing, see [Terminus's Wiki](https://github.com/pantheon-systems/terminus/wiki/Plugins)
+For help installing, see [Manage Plugins](https://pantheon.io/docs/terminus/plugins/)
 ```
 mkdir -p ~/.terminus/plugins
 composer create-project --no-dev -d ~/.terminus/plugins pantheon-systems/terminus-drupal-console-plugin:~1

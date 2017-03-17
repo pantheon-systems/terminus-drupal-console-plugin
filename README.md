@@ -1,6 +1,6 @@
 # Terminus Drupal Console
 
-[![CircleCI](https://circleci.com/gh/pantheon-systems/terminus-drupal-console-plugin.svg?style=svg)](https://circleci.com/gh/pantheon-systems/terminus-drupal-console-plugin)
+[![CircleCI](https://circleci.com/gh/pantheon-systems/terminus-drupal-console-plugin.svg?style=shield)](https://circleci.com/gh/pantheon-systems/terminus-drupal-console-plugin)
 [![Terminus v1.x Compatible](https://img.shields.io/badge/terminus-v1.x-green.svg)](https://github.com/pantheon-systems/terminus-drupal-console-plugin/tree/1.x)
 [![Terminus v0.x Compatible](https://img.shields.io/badge/terminus-v0.x-green.svg)](https://github.com/pantheon-systems/terminus-drupal-console-plugin/tree/0.x)
 

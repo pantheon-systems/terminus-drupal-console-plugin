@@ -26,3 +26,4 @@ composer create-project --no-dev -d ~/.terminus/plugins pantheon-systems/terminu
 ```
 ## Help
 Run `terminus help drupal` for help.
+test
